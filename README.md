@@ -1,50 +1,25 @@
-# Welcome to your Expo app 👋
+## 🧠 Challenge: Customizable Injection
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- Modify the code snippet below so that the site’s background can be set to a color other than `lightblue`.
+- You should allow the user to change the color via a text input. If you prefer, you can also add buttons for a set of predefined colors.
+- **Note:** You may also adjust the `style` prop of the `WebView` component!
 
-## Get started
+```jsx
+import React from 'react';
+import { View } from 'react-native';
+import { WebView } from 'react-native-webview';
 
-1. Install dependencies
+const InjectExample = () => {
+  const script = `document.body.style.backgroundColor = 'lightblue';`;
 
-   ```bash
-   npm install
-   ```
+  return (
+    <View style={{ flex: 1 }}>
+      <WebView 
+        source={{ uri: 'https://www.google.com' }} 
+        injectedJavaScript={script} 
+      />
+    </View>
+  );
+};
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+export default InjectExample;
