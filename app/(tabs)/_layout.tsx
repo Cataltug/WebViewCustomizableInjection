@@ -40,7 +40,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
-      <Tabs.Screen name="Autocounter" options={{ title: "Auto Counter" }} />,
+      <Tabs.Screen name="WebView" options={{ title: "WebView" }} />,
     </Tabs>
 
   );
